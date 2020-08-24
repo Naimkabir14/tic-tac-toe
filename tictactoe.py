@@ -39,7 +39,7 @@ def play_logic():
         row, column, value = player_one_prompt()
         if grid[row][column] == "|___|":
             game_board(row, column, value)
-            if check_winner(row, column, value, count):
+            if check_winner(row, column, value):
                 print(f"{player_one} you win!")
                 break
         else:
@@ -48,7 +48,7 @@ def play_logic():
         row, column, value = player_two_prompt()
         if grid[row][column] == "|___|":
             game_board(row, column, value)
-            if check_winner(row, column, value, count):
+            if check_winner(row, column, value):
                 print(f"{player_two} you win!")
                 break
         else:
@@ -60,12 +60,12 @@ def play_logic():
                     break
                 else:
                     game_board(row, column, value)
-            if check_winner(row, column, value, count):
+            if check_winner(row, column, value):
                 print(f"{player_two} you win!")
                 break
         count += 1
 
-def check_winner(row, column, value, count):
+def check_winner(row, column, value):
     if grid[0][column] == f"| {value} |" and grid[1][column] == f"| {value} |" and grid[2][column] == f"| {value} |": #check vertical 
         return True
     if grid[row][0] == f"| {value} |" and grid[row][1] == f"| {value} |" and grid[row][2] == f"| {value} |": #check horizontal 
