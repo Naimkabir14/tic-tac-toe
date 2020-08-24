@@ -43,7 +43,7 @@ def play_logic():
                 print(f"{player_one} you win!")
                 break
         else:
-            print("Spot has been selected. Try again")
+            print("Spot has already been selected. Try again")
             continue
         row, column, value = player_two_prompt()
         if grid[row][column] == "|___|":
@@ -53,7 +53,7 @@ def play_logic():
                 break
         else:
             while 1:
-                print("Spot has been selected. Try again")
+                print("Spot has already been selected. Try again")
                 row, column, value = player_two_prompt()
                 if grid[row][column] == "|___|":
                     game_board(row, column, value)
